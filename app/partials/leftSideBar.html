@@ -1,0 +1,27 @@
+<aside>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <p class="panel-title">Navigation</p>
+        </div>
+
+        <!-- Navigation Panel for not logged in users -->
+        <div class="panel-body" ng-if="!AuthService.isLoggedIn()">
+            <ul>
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/login">Login</a></li>
+                <li><a href="#/register">Register</a></li>
+            </ul>
+        </div>
+
+        <!-- Navigation Panel for logged in users -->
+        <div class="panel-body" ng-if="AuthService.isLoggedIn()">
+            <ul>
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/user/ads">My Ads</a></li>
+                <li><a href="#/user/publish-ad">Publish New Ad</a></li>
+                <li><a href="#/user/edit-profile">Edit Profile</a></li>
+                <li><a href ng-click="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</aside>
